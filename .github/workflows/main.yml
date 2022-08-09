@@ -1,0 +1,16 @@
+name: sbom-scan
+
+on:
+  workflow_dispatch:
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run a multi-line script
+        run: |
+          wget -O ./sbom-tool https://github.com/microsoft/sbom-tool/releases/download/v0.1.11/sbom-tool-linux-x64
+          chmod u+x ./sbom-tool
+          TERM=linux ./sbom-tool -h
