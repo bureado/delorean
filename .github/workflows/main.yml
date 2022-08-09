@@ -11,6 +11,7 @@ jobs:
 
       - name: Run a multi-line script
         run: |
+          env
           wget -O ./sbom-tool https://github.com/microsoft/sbom-tool/releases/download/v0.1.11/sbom-tool-linux-x64
           chmod u+x ./sbom-tool
-          TERM=linux ./sbom-tool -h
+          env -i TERM=linux ./sbom-tool -h
