@@ -14,4 +14,3 @@ jobs:
           env
           wget -qO ./sbom-tool https://github.com/microsoft/sbom-tool/releases/download/v0.1.11/sbom-tool-linux-x64
           chmod u+x ./sbom-tool
-          env -i TERM=linux ./sbom-tool -h > /dev/null 2>&1
